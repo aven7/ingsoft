@@ -47,16 +47,17 @@ int main()
 {
 	//Declaración de variables.
 	bool existeBalaDer= false, existeBalaIzq = false;
-	int anchuraMax = 79;
+	const int anchuraMax = 79;
 	int posPlayer = anchuraMax/2;
 	int posBalaIzq = 0, posBalaDer = 0;
 	printf("\n\n\n\n\n\n\n\n\n");
-	
+
+	//LOOP juego
 	while (true) {
-		//Para que no se salga del mundo y se pueda lanzar otra bala.
-		if (posBalaDer == anchuraMax-1)
+		//Balas no salgan de mundo
+		if (posBalaDer >= anchuraMax-1)
 			existeBalaDer = false;
-		if (posBalaIzq == 0)
+		if (posBalaIzq <= 0)
 			existeBalaIzq = false;
 		
 		pintarPantallaCompleta(posPlayer, existeBalaDer, posBalaDer, existeBalaIzq, posBalaIzq, anchuraMax);
@@ -74,7 +75,7 @@ int main()
 						posPlayer--;
 					break;
 				case 'd': case'D':
-					if (posPlayer<anchuraMax - 1)
+					if (posPlayer<anchuraMax-1)
 						posPlayer++;
 					break;
 				case 'q': case'Q':
@@ -86,7 +87,7 @@ int main()
 				case 'w': case'W':
 					if (!existeBalaDer) {
 						existeBalaDer = true;
-						posBalaDer = posPlayer + 2;
+						posBalaDer = posPlayer + 1;
 					}
 					break;
 				default:
