@@ -54,7 +54,8 @@ int main()
 
 	//LOOP juego
 	while (true) {
-		//Balas no salgan de mundo
+		
+		//Balas no salgan del mundo.
 		if (posBalaDer >= anchuraMax-1)
 			existeBalaDer = false;
 		if (posBalaIzq <= 0)

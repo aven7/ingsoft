@@ -24,7 +24,7 @@ void pintParteIzq() {
 				printf_s("<");
 			}
 			if (maloIzq && i == posMaloIzq) {
-				printf_s(">");
+				printf_s("H");
 			}
 			if(i != posMaloIzq && i != posBalaIzq)
 				printf_s("_");
@@ -42,7 +42,7 @@ void pintParteDer() {
 				printf_s(">");
 			}
 			if(maloDer && x== posMaloDer){
-				printf_s("<");
+				printf_s("H");
 			} 
 			if (x != posMaloDer && x != posBalaDer)
 				printf_s("_");
@@ -137,13 +137,13 @@ int main()
 						posPlayer++;
 					break;
 				case 'q': case'Q':
-					if(!existeBalaIzq){
+					if(!existeBalaIzq && !existeBalaDer){
 						existeBalaIzq = true;
 						posBalaIzq = posPlayer - 1;
 					}
 					break;
 				case 'w': case'W':
-					if (!existeBalaDer) {
+					if (!existeBalaDer && !existeBalaIzq) {
 						existeBalaDer = true;
 						posBalaDer = posPlayer + 1;
 					}
