@@ -6,24 +6,28 @@
 
 
 void muerte() {
-	if (existeMalo) {
+	/*if (existeMalo) {
 		if (posMaloDer == posPlayer + 1 || posMaloDer == posPlayer)
 			finJuego = true;
 
 		if (posMaloIzq == posPlayer - 1 || posMaloIzq == posPlayer)
 			finJuego = true;
-	}
+	}*/
 }
 
 void movimientoMaloBala(){
-	if (existeBalaDer)
+	if (existeBalaDer){
 		posBalaDer++;
-	if (existeBalaIzq)
+	}
+	if (existeBalaIzq){
 		posBalaIzq--;
-	if (maloDer)
+	}
+	if (maloDer){
 		posMaloDer--;
-	if (maloIzq)
+	}
+	if (maloIzq) {
 		posMaloIzq++;
+	}
 }
 
 void botones() {
@@ -31,17 +35,19 @@ void botones() {
 		switch (_getch())
 		{
 		case 'a': case 'A':
-			if (posPlayer>0)
+			if (posPlayer>0){
 				posPlayer--;
+			}
 			break;
 		case 'd': case'D':
-			if (posPlayer<anchuraMax - 1)
+			if (posPlayer<anchuraMax - 1){
 				posPlayer++;
+			}
 			break;
 		case 'q': case'Q':
 			if (!existeBalaIzq && !existeBalaDer) {
 				existeBalaIzq = true;
-				posBalaIzq = posPlayer - 1;
+				posBalaIzq = posPlayer -1;
 			}
 			break;
 		case 'w': case'W':

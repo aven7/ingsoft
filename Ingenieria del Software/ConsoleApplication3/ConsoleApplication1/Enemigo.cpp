@@ -4,22 +4,27 @@
 
 
 void muerteMalo() {
-	if (posBalaDer == posMaloDer || posBalaDer == posMaloDer + 1) {
-		existeBalaDer = false;
-		posBalaDer = -1;
-		posMaloDer = -5;
-		puntos += 5;
-		maloDer = false;
+	if (posBalaDer!=0) {
+		if (posBalaDer == posMaloDer || posBalaDer == posMaloDer + 1) {
+			existeBalaDer = false;
+			posBalaDer = 0;
+			posMaloDer = 0;
+			puntos += 5;
+			maloDer = false;
+		}
 	}
-	if (posBalaIzq == posMaloIzq || posBalaIzq == posMaloIzq - 1) {
-		existeBalaIzq = false;
-		posMaloIzq = -5;
-		posBalaIzq = -1;
-		puntos += 5;
-		maloIzq = false;
+	if (posBalaIzq!=0) {
+		if (posBalaIzq == posMaloIzq || posBalaIzq == posMaloIzq - 1) {
+			existeBalaIzq = false;
+			posMaloIzq = 0;
+			posBalaIzq = 0;
+			puntos += 5;
+			maloIzq = false;
+		}
 	}
-	if (!maloIzq && !maloDer)
+	if (!maloIzq && !maloDer){
 		existeMalo = false;
+	}
 }
 
 void saleMalo() {

@@ -19,5 +19,6 @@ void muerte();
 void desplazamiento();
 void movimientoMaloBala();
 void botones();
+void crearGotas();
 
 
